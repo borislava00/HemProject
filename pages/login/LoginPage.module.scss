@@ -1,0 +1,9 @@
+@use "../../src/styles/colors";
+
+.wrapper {
+  height: 100vh;
+  background: linear-gradient(0deg, white 50%, #7441F3 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

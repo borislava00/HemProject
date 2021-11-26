@@ -10,7 +10,7 @@ export default function Login(){
                 <Grid item xs={10}>
                     <TextField fullWidth className={styles.input}
                                 InputProps={{
-                                    startAdornment: <InputAdornment position="start"><EmailIcon/></InputAdornment>,
+                                    startAdornment: <InputAdornment position="start" sx={{color: 'black'}}><EmailIcon/></InputAdornment>,
                                 }}>
                                     
                     </TextField>
@@ -18,12 +18,12 @@ export default function Login(){
                 <Grid item xs = {10}>
                     <TextField fullWidth className={styles.input}
                                 InputProps={{
-                                    startAdornment: <InputAdornment position="start"><LockIcon/></InputAdornment>,
+                                    startAdornment: <InputAdornment position="start" sx={{color: 'black'}}><LockIcon/></InputAdornment>,
                                 }}>
                     </TextField>
                 </Grid>
                 <Grid item xs={10}>
-                    <Button fullWidth variant="contained">
+                    <Button fullWidth variant="contained" className={styles.button}>
                         Login
                     </Button>
                 </Grid>
