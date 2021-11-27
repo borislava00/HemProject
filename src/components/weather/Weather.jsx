@@ -12,7 +12,7 @@ export default function Weather({degrees, type}){
                 </Grid>
                 <Grid item xs = {7}>
                     <Typography variant="h4" style={{color:"#4e24f2"}}>Weather</Typography>
-                    <Typography variant="h1" color="initial">{degrees}&#186;</Typography>
+                    <Typography variant="h1" color="initial">{degrees}&deg;</Typography>
                 </Grid>
             </Grid>
         
