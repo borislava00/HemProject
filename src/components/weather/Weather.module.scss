@@ -1,4 +1,14 @@
 .weather-wrapper{
+    position: relative;
     max-width: 20%;
     padding: 20px;
+}
+
+.image{
+    display: block;
+    max-width: 80%;
+}
+
+.text-container{
+    font-size:2.5vw !important;
 }

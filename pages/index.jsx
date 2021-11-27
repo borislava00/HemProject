@@ -5,8 +5,6 @@ import Weather from "../src/components/weather/Weather";
 export default function Index() {
   return(
     <>
-      <Weather degrees={22}></Weather>
     </>
-    // <Example />;
   )
 }
