@@ -2,7 +2,7 @@ import { Container , Grid , Avatar , Typography } from '@mui/material';
 
 import styles from "./User.module.scss"
 
-export default function User({ avatar = " " , username = " " , size = 90 }) {
+export default function User({ avatar = " " , name = " " , size = 90 }) {
     return (
         <div className={styles['user-container']}>
             <Container>
@@ -11,7 +11,7 @@ export default function User({ avatar = " " , username = " " , size = 90 }) {
                         <Avatar src={avatar} sx={{ width: size , height: size }}/>
                     </Grid>
                     <Grid item>
-                        <Typography variant="h3">{username}</Typography>
+                        <Typography variant="h3">{name}</Typography>
                     </Grid>
                 </Grid>
             </Container>
