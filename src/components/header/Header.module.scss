@@ -1,0 +1,20 @@
+.header-wrapper {
+    display: flex;
+    width: 1643px;
+    height: 195px;
+}
+.paper-wrapper {
+    display: flex !important;
+    align-items: center !important;
+}
+.left {
+    display: flex;
+    align-items: flex-start;
+    width: 25%;
+}
+.right {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 75%;
+}
