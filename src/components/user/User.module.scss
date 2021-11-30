@@ -1,5 +1,9 @@
-.user-container {
-    height: 150px;
-    display: flex;
-    align-items: center;
+.navigation {
+    width: 245px;
+
+    .user-container {
+        max-height: 150px;
+        display: flex;
+        align-items: center;
+    }    
 }
