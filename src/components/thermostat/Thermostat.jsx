@@ -1,5 +1,6 @@
 import { CircularProgress , Stack , Box , Typography , Paper , IconButton } from '@mui/material';
-import { AddCircleOutlineIcon , RemoveCircleOutlineIcon } from '@mui/icons-material';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import { LineChart , Line } from 'recharts';
 import { useState , useEffect } from 'react';
 
