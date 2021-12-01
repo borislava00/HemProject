@@ -1,0 +1,31 @@
+.paper-wrapper {
+    position: absolute;
+    background: -webkit-linear-gradient(0.5turn, #EC6953, #DF53A8);
+    height: 410px;
+    width: 803px;
+    margin-left: 260px;
+    margin-top: 150px;
+}
+.stack-wrapper {
+    position: absolute;
+    width: 803px;
+    display: flex;
+    align-items: center;
+    margin-top: 45px;
+}
+.temperature-box {
+    position: absolute;
+    display: flex;
+    width: 803px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 110px;
+}
+.graph-wrapper {
+    position: absolute;
+    background: -webkit-linear-gradient(0.5turn, #EC6953, #DF53A8);
+    width: 803px;
+    height: 186px;
+    margin-top: 382px;
+    margin-left: 260px;
+}

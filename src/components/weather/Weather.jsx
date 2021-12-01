@@ -18,7 +18,7 @@ export default function Weather({degrees, type}){
                     <img src={types[type]} className={styles.image}/>
                 </Grid>
                 <Grid item xs = {7}>
-                    <Typography variant="h4" style={{color:"#4e24f2"}} className={styles["text-container"]}>Weather</Typography>
+                    <Typography fontWeight="400" variant="h5" style={{color:"#7441F3"}} className={styles["text-container"]}>Weather</Typography>
                     <Typography variant="h1" color="initial" className={styles["text-container"]}>{degrees}&deg;</Typography>
                 </Grid>
             </Grid>
