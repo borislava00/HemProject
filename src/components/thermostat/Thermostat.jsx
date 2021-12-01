@@ -1,6 +1,6 @@
 import { CircularProgress , Stack , Box , Typography , Paper , IconButton } from '@mui/material';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
+import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutline';
+import RemoveCircleOutlinedIcon from '@mui/icons-material/RemoveCircleOutline';
 import { LineChart , Line } from 'recharts';
 import { useState , useEffect } from 'react';
 
@@ -44,11 +44,11 @@ export default function Thermostat({ data }) {
                 </Stack>
                 <Box className={styles['temperature-box']}>
                     <IconButton disabled={minusDisabled} onClick={() => onDecrease()} >
-                        <RemoveCircleOutlineIcon style={{ fontSize: '2rem' , color : 'white' , marginRight: '15px'}} />
+                        <RemoveCircleOutlinedIcon style={{ fontSize: '2rem' , color : 'white' , marginRight: '15px'}} />
                     </IconButton>
                     <Typography style={{ color: 'white' , fontSize: '5em' , fontWeight: 'bold' }}>{progress}&deg;</Typography>
                     <IconButton disabled={plusDisabled} onClick={() => onIncrease()} >
-                        <AddCircleOutlineIcon style={{ fontSize: '2rem' , color: 'white' }} />
+                        <AddCircleOutlinedIcon style={{ fontSize: '2rem' , color: 'white' }} />
                     </IconButton>
                 </Box>
             </Paper>
