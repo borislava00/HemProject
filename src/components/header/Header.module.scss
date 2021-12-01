@@ -1,15 +1,22 @@
+@use "../../styles/colors.scss";
+
 .header-wrapper {
+    background-color: colors.$accent_primary;
     display: flex;
-    width: 1643px;
-    height: 195px;
+    height: 224px;
+    justify-content: center;
 }
 .paper-wrapper {
     display: flex !important;
     align-items: center !important;
+    margin-top: 100px;
+    margin-left: 200px;
+    width: 1600px;
+    height: 180px;
 }
 .left {
     display: flex;
-    align-items: flex-start;
+    margin-left: 50px;
     width: 25%;
 }
 .right {

@@ -2,7 +2,7 @@ import { Container , Grid , Avatar , Typography } from '@mui/material';
 
 import styles from "./User.module.scss"
 
-export default function User({ avatar = " " , name = " " , size = 90, headingSize, hasWelcome = false }) {
+export default function User({ avatar = " " , name = " " , size = 90, headingSize , hasWelcome = false }) {
     return (
         <div className={styles['user-container']}>
             <Container disableGutters>
