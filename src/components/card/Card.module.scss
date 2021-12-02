@@ -1,0 +1,20 @@
+@use "../../styles/colors.scss";
+
+.card{
+    padding : 0;
+    border-radius: 2rem;
+    max-width: 14%;
+    background-color: colors.$accent_primary;
+}
+
+.content{
+    background-color: rgb(colors.$accent_primary, 10%);
+    padding: auto;
+}
+
+.image{
+    max-width: 50%;
+    height: 80%;
+    display:block;
+    margin:auto;
+}
