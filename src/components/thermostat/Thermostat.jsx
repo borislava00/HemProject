@@ -1,5 +1,6 @@
 import { CircularProgress , Stack , Box , Typography , Paper , IconButton } from '@mui/material';
-import { RemoveCircle as RemoveCircleOutlinedIcon , AddCircle as AddCircleOutlinedIcon} from '@mui/icons-material';
+import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutline';
+import RemoveCircleOutlinedIcon from '@mui/icons-material/RemoveCircleOutline';
 import { LineChart , Line } from 'recharts';
 import { useState , useEffect } from 'react';
 
@@ -7,27 +8,15 @@ import styles from "./Thermostat.module.scss";
 
 export default function Thermostat({ data }) {
     const [progress, setProgress] = useState(0);
-    const [plusDisabled, setPlusDisabled] = useState(false);
-    const [minusDisabled, setMinusDisabled] = useState(false);
 
     const onIncrease = () => {
-        if( progress == 50 ){
-            setPlusDisabled(true);
-        } else {
-            let next = progress + 1;
-            setProgress(next);
-            setMinusDisabled(false);
-        }
+        let next = progress + 1;
+        setProgress(next);
     }
 
     const onDecrease = () => {
-        if( progress == 0 ){
-            setMinusDisabled(true);
-        } else {
-            let prev = progress - 1;
-            setProgress(prev);
-            setPlusDisabled(false);
-        }
+        let prev = progress - 1;
+        setProgress(prev);
     }
 
     useEffect(() => {
@@ -42,11 +31,11 @@ export default function Thermostat({ data }) {
                     <CircularProgress style={{ color: 'white' , position: 'absolute' , transform: 'rotate(180deg)' }} variant="determinate" value={progress} size={375} thickness={2}/>
                 </Stack>
                 <Box className={styles['temperature-box']}>
-                    <IconButton disabled={minusDisabled} onClick={() => onDecrease()} >
+                    <IconButton disabled={progress == 0 ? true : false } onClick={() => onDecrease() }>
                         <RemoveCircleOutlinedIcon style={{ fontSize: '2rem' , color : 'white' , marginRight: '15px'}} />
                     </IconButton>
                     <Typography style={{ color: 'white' , fontSize: '5em' , fontWeight: 'bold' }}>{progress}&deg;</Typography>
-                    <IconButton disabled={plusDisabled} onClick={() => onIncrease()} >
+                    <IconButton disabled={progress == 50 ? true : false } onClick={() => onIncrease() } >
                         <AddCircleOutlinedIcon style={{ fontSize: '2rem' , color: 'white' }} />
                     </IconButton>
                 </Box>
