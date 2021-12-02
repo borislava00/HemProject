@@ -3,12 +3,11 @@
 .card{
     padding : 0;
     border-radius: 2rem;
-    max-width: 14%;
-    background-color: colors.$accent_primary;
+    background-color: colors.$primary_main;
 }
 
 .content{
-    background-color: rgb(colors.$accent_primary, 10%);
+    background-color: rgb(colors.$primary_main, 10%);
     padding: auto;
 }
 
