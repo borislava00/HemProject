@@ -15,5 +15,14 @@
     max-width: 50%;
     height: 80%;
     display:block;
-    margin:auto;
+    margin: 1.4rem auto;
+}
+
+.title {
+    text-transform: uppercase;
+    text-align: center;
+    font-style: colors.$font_primary;
+    font-size: 0.875rem;
+    font-weight: 700 !important;
+    color: colors.$primary_main
 }

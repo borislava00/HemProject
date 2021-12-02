@@ -1,8 +1,8 @@
-import { CardContent, CardMedia } from '@mui/material';
+import { CardContent, CardMedia, Typography } from '@mui/material';
 import CardWrapper from '@mui/material/Card';
 import styles from './Card.module.scss';
 
-export default function Card({iconUrl, outlined = false, onClick}){
+export default function Card({iconUrl, outlined = false, onClick, title}){
     return(
         <div className={styles.card} onClick={onClick}>
             <CardWrapper variant={outlined ? "outlined" : null}>
@@ -14,6 +14,7 @@ export default function Card({iconUrl, outlined = false, onClick}){
                     :
                     null
                     }
+                    {title ? <Typography className={styles.title}>{title}</Typography> : null}
                 </CardContent>
             </CardWrapper>
 
