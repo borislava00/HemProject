@@ -5,6 +5,7 @@ import Weather from "../src/components/weather/Weather";
 import Header from "../src/components/header/Header";
 import Navigation from "../src/components/navigation/Navigation";
 import Thermostat from "../src/components/thermostat/Thermostat";
+import Card from "../src/components/card/Card";
 
 export default function Index() {
   const data = [
@@ -18,6 +19,7 @@ export default function Index() {
   return(
     <>
       <Header left={<User avatar="../images/avatar.png" name="Jonh Doe" headingSize="h3" />} right={<><Weather degrees={22} type="cloudy" /> <Time /></>}/>
+      <Card iconUrl={"../images/alarm-clock.svg"} outlined={false}/>
       <Navigation/>
       <Thermostat data={data}/>
     </>
