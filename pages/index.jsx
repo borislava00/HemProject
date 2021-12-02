@@ -19,7 +19,7 @@ export default function Index() {
   return(
     <>
       <Header left={<User avatar="../images/avatar.png" name="Jonh Doe" headingSize="h3" />} right={<><Weather degrees={22} type="cloudy" /> <Time /></>}/>
-      <Card iconUrl={"../images/alarm-clock.svg"} outlined={false}/>
+      <Card iconUrl={"../images/alarm-clock.svg"} outlined={false} onClick={() => {}}/>
       <Navigation/>
       <Thermostat data={data}/>
     </>
