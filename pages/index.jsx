@@ -16,58 +16,17 @@ export default function Index() {
     { temperature: 15, hour: 16 },
     { temperature: 16, hour: 17 },
   ]
-
-  {/*const cameras = {
-    "cameras": [
-      {
-        "videoUrl": "../videos/balcony.mp4"
-      },
-      {
-        "videoUrl": "../videos/bathroom.mp4"
-      },
-      {
-        "videoUrl": "../videos/front-door.mp4"
-      },
-      {
-        "videoUrl": "../videos/garden.mp4"
-      },
-      {
-        "videoUrl": "../videos/kitchen.mp4"
-      },
-      {
-        "videoUrl": "../videos/living-room-2.mp4"
-      },
-    ],
-    "hasButton": Boolean
-  }*/}
-
-  const cameras = {
-    "cameras": [
-      {
-        "videoUrl": "../images/sunny.svg"
-      },
-      {
-        "videoUrl": "../images/avatar.png"
-      },
-      {
-        "videoUrl": "../images/cloudy.svg"
-      },
-      {
-        "videoUrl": "../images/morning.svg"
-      },
-      {
-        "videoUrl": "../images/shower.svg"
-      },
-      {
-        "videoUrl": "../images/snowy.svg"
-      },
-    ],
-    "hasButton": false
-  }
-
+  const cameras = [
+    {videoUrl : "../videos/balcony.mp4"},
+    {videoUrl : "../videos/bathroom.mp4"},
+    {videoUrl : "../videos/front-door.mp4"},
+    {videoUrl : "../videos/living room 2.mp4"},
+    {videoUrl : "../videos/garden.mp4"},
+    {videoUrl : "../videos/kitchen.mp4"},
+  ]
   return (
     <>
-      <Header left={<User avatar="../images/avatar.png" name="Jonh Doe" headingSize="h3" />} right={<><Weather degrees={22} type="cloudy" /> <Time /></>} />
+      {/* <Header left={<User avatar="../images/avatar.png" name="Jonh Doe" headingSize="h3" />} right={<><Weather degrees={22} type="cloudy" /> <Time /></>} />
       <Navigation />
      {/* <Thermostat data={data} /> */}
       <Scenes cards={[
@@ -75,7 +34,7 @@ export default function Index() {
         { iconUrl: '../images/alarm-clock.svg', outlined: false },
         { iconUrl: '../images/alarm-clock.svg', outlined: false }
       ]} />
-      <Cameras {...cameras} />
+      <Cameras cameras={cameras} hasButton={true} />
     </>
   )
 }
