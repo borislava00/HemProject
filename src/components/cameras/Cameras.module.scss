@@ -1,0 +1,28 @@
+.cameras-wrapper{
+    max-height: 50%;
+}
+
+.items-wrapper{
+    display: inline-block;
+    max-height: 400px;
+    overflow: scroll;
+}
+
+.cameras-views{
+    display: block !important;
+    // width: 50px;
+}
+
+.item{
+    display: inline-block;
+    max-width: 50%;
+}
+
+.add{
+    display: inline-block;
+    min-width: 150px;
+}
+
+// .scroll{
+//     overflow: scroll;
+// }
