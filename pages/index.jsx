@@ -62,7 +62,7 @@ export default function Index() {
         "videoUrl": "../images/snowy.svg"
       },
     ],
-    "hasButton": Boolean
+    "hasButton": false
   }
 
   return (
