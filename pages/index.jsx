@@ -20,8 +20,6 @@ export default function Index() {
     {videoUrl : "../videos/balcony.mp4"},
     {videoUrl : "../videos/bathroom.mp4"},
     {videoUrl : "../videos/front-door.mp4"},
-    {videoUrl : "../videos/garden.mp4"},
-    {videoUrl : "../videos/kitchen.mp4"},
     {videoUrl : "../videos/living room 2.mp4"},
     {videoUrl : "../videos/garden.mp4"},
     {videoUrl : "../videos/kitchen.mp4"},
@@ -30,13 +28,13 @@ export default function Index() {
     <>
       {/* <Header left={<User avatar="../images/avatar.png" name="Jonh Doe" headingSize="h3" />} right={<><Weather degrees={22} type="cloudy" /> <Time /></>} />
       <Navigation />
-      <Thermostat data={data} />
+     {/* <Thermostat data={data} /> */}
       <Scenes cards={[
         { iconUrl: '../images/alarm-clock.svg', outlined: false },
         { iconUrl: '../images/alarm-clock.svg', outlined: false },
         { iconUrl: '../images/alarm-clock.svg', outlined: false }
-      ]} /> */}
-      <Cameras cameras={cameras} hasButton={true}/>
+      ]} />
+      <Cameras cameras={cameras} hasButton={true} />
     </>
   )
 }
