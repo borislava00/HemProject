@@ -19,7 +19,7 @@ export default function Card({iconUrl, outlined = false, onClick }){
             <CardWrapper variant={outlined ? "outlined" : null}>
                 <CardContent className={styles.content}>
                     {iconUrl ? 
-                    <CardMedia className={styles.image} src={iconUrl} component={getComponent()} autoPlay controls /> 
+                    <CardMedia className={styles.image} image={iconUrl} component="img" /> 
                     :
                     null
                     }
