@@ -1,7 +1,7 @@
 import Card from "../card/Card.jsx";
-import { Grid  , Paper } from "@mui/material";
+import { Grid } from "@mui/material";
 import styles from "./Cameras.module.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Cameras({ cameras , hasButton }) {
     const [activeCard, setActiveCard] = useState(0);
@@ -20,9 +20,9 @@ export default function Cameras({ cameras , hasButton }) {
                         {
                         cameras.map((camera, index) => {
                             return(
-                                    <video className={styles.item} controls key={index}  onClick={() => setActiveCard(index)}>
-                                        <source  className={styles['cameras-views']} src={camera.videoUrl} type="video/mp4"  />
-                                    </video>
+                                 <video className={styles.item} key={index} onClick={() =>  {setActiveCard(index)}}>
+                                    <source  className={styles['cameras-views']} src={camera.videoUrl} type="video/mp4"  />
+                                </video>
                                 );
                             })
                         }
