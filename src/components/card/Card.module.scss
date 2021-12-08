@@ -1,20 +1,21 @@
 @use "../../styles/colors.scss";
 
-.card{
-    padding : 0;
+.card {
+    padding: 0;
     border-radius: 2rem;
     background-color: colors.$primary_main;
 }
 
-.content{
+.content {
     background-color: rgb(colors.$primary_main, 10%);
     padding: auto;
+    position: relative;
 }
 
-.image{
+.image {
     max-width: 50%;
-    height: 50%;
-    display:block;
+    height: 80%;
+    display: block;
     margin: 1.4rem auto;
 }
 
@@ -24,5 +25,15 @@
     font-style: colors.$font_primary;
     font-size: 0.875rem;
     font-weight: 700 !important;
-    color: colors.$primary_main
+    color: colors.$primary_main;
+}
+
+.chip {
+    background-color: colors.$highlight !important;
+    color: white !important;
+    border-radius: 7px !important;
+    font-weight: 700 !important;
+    position: absolute;
+    top: 15px;
+    right: 13px;
 }
