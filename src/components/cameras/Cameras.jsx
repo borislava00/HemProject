@@ -21,13 +21,15 @@ export default function Cameras({ cameras , hasButton }) {
     return(
         <div className={styles['cameras-wrapper']}>
             <Grid container>
-                <Grid item xs={8}>
-                    <video ref={videoRef} autoPlay={true} controls>
-                        <source src={cameras[activeCard].videoUrl} />
-                    </video>
+                <Grid item>
+                    <div >
+                        <video ref={videoRef} autoPlay={true} controls className={styles.majorVideo}  style={{ width: 200, height: 400 }}>
+                            <source src={cameras[activeCard].videoUrl} />
+                        </video>
+                    </div>
                 </Grid>
-                <Grid item xs={4}>
-                    <Grid container className={styles.scroll}>
+                <Grid item xs={2}>
+                    <Grid container spacing={2}>
                         <div className={styles['items-wrapper']}>
                         {
                         cameras.map((camera, index) => {

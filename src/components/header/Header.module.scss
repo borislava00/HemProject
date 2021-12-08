@@ -4,14 +4,16 @@
     background-color: colors.$primary_main;
     display: flex;
     height: 224px;
+    width: 100% !important;
     justify-content: center;
 }
 .paper-wrapper {
     display: flex !important;
     align-items: center !important;
+    padding: 0px !important;
     margin-top: 100px;
     margin-left: 200px;
-    width: 1600px;
+    width: 1400px;
     height: 180px;
 }
 .left {
