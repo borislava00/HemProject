@@ -11,7 +11,7 @@ export default function User({ avatar = " " , name = " " , size = 90, headingSiz
                         <Avatar src={avatar} sx={{ width: size , height: size }}/>
                     </Grid>
                     <Grid item>
-                        {hasWelcome && <Typography variant="h6">Welcome back,</Typography>}
+                        {hasWelcome && <Typography color="#7441F3" fontWeight="400" variant="h5">Welcome back,</Typography>}
                         <Typography variant={headingSize}>{name}</Typography>
                     </Grid>
                 </Grid>

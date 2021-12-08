@@ -1,0 +1,15 @@
+@use "../src/styles/colors.scss";
+
+.container {
+    padding: 0px !important;
+    margin: 0px !important;
+    max-width: inherit  !important;
+}
+.grid-container {
+    width: 100% !important;
+    height: 100% !important;
+}
+.grid-item {
+    width: 100% !important;
+    height: 100% !important;
+}
