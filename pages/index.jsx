@@ -6,6 +6,7 @@ import Navigation from "../src/components/navigation/Navigation";
 import Thermostat from "../src/components/thermostat/Thermostat";
 import Scenes from "../src/components/scenes/Scenes";
 import Cameras from "../src/components/cameras/Cameras";
+import Energy from "../src/components/energy/Energy";
 
 export default function Index() {
   const data = [
@@ -29,12 +30,13 @@ export default function Index() {
       {/* <Header left={<User avatar="../images/avatar.png" name="Jonh Doe" headingSize="h3" />} right={<><Weather degrees={22} type="cloudy" /> <Time /></>} />
       <Navigation />
      {/* <Thermostat data={data} /> */}
-      <Scenes cards={[
+      {/* <Scenes cards={[
         { iconUrl: '../images/alarm-clock.svg', outlined: false },
         { iconUrl: '../images/alarm-clock.svg', outlined: false },
         { iconUrl: '../images/alarm-clock.svg', outlined: false }
       ]} />
-      <Cameras cameras={cameras} hasButton={true} />
+      <Cameras cameras={cameras} hasButton={true} /> */}
+      <Energy data={data}/>
     </>
   )
 }
