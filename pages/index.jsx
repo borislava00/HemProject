@@ -9,7 +9,7 @@ import Scenes from "../src/components/scenes/Scenes";
 import Cameras from "../src/components/cameras/Cameras";
 import Rooms from "../src/components/rooms/Rooms";
 import Energy from "../src/components/energy/Energy";
-
+import Modal from "../src/components/modal/Modal";
 
 import styles from "./Dashboard.module.scss";
 
