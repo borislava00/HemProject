@@ -24,13 +24,13 @@ export default function Index(){
     const leftHeader = <Typography variant="h2" color="initial">Living Room</Typography>
 
     const rightHeader = 
-    <Grid container style={{"justify-content": "right"}}>
-        <Grid item xs={7}>
-            <Typography variant="h6" color="initial">
+    <Grid container style={{"text-align": "right"}}>
+        <Grid item xs={11}>
+            <Typography variant="h6" color="#5c2fcf">
                 Devices
             </Typography>
         </Grid>
-        <Grid xs={7}>
+        <Grid item xs={11}>
             <Typography variant="h2" color="initial">
                 {onlineDevices}
             </Typography>
@@ -50,7 +50,7 @@ export default function Index(){
         <Container maxWidth="xl">
             <Navigation/>
             <Header left={leftHeader} right={rightHeader}/>
-            <Grid container spacing={3}>
+            <Grid container style={{"margin-top" : "100px"}}>
               <Grid item xs={6}>
                 <Devices devices={devices}/>
               </Grid>
