@@ -2,7 +2,7 @@ import { Dialog , DialogTitle , DialogContent , Button , DialogActions }  from "
 
 import styles from "./Modal.module.scss";
 
-export default function Modal({ open , title , buttonText , handleSubmit , handleClose }) {
+export default function Modal({ open , title , buttonText , handleSubmit , handleClose , children}) {
     return(
         <div className={styles['modal-wrapper']}>
             <Dialog
@@ -11,18 +11,12 @@ export default function Modal({ open , title , buttonText , handleSubmit , handl
             >
                 <DialogTitle className={styles.title}>{title}</DialogTitle>
                 <DialogContent className={styles.content} >
-                    <ChildExample />
+                    {children}
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleSubmit}>{buttonText}</Button>
                 </DialogActions>
             </Dialog>
         </div>
-    );
-}
-
-function ChildExample() {
-    return(
-        <div>Modal Content</div>
     );
 }
