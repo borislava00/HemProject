@@ -7,9 +7,12 @@ import {Grid} from '@mui/material';
 import {Typography} from '@mui/material';
 import SceneComposer from '../../src/components/scenes/SceneComposer';
 import AddScene from '../../src/components/scenes/AddScene';
+import { useState } from 'react';
 
 
 export default function Index(){
+    const [openClose, setOpenClose] = useState(true);
+
     const devices = [
         {"title" : "ON",
         "iconUrl" : '../images/alarm-clock.svg'},
@@ -59,7 +62,7 @@ export default function Index(){
                 <Cameras cameras={cameras} />
               </Grid>
             </Grid>
-            <AddScene open={true}/>
+            <AddScene open={openClose} onSubmit={() => {setOpenClose(false)}}/>
             <SceneComposer/>
         </Container>
     )
