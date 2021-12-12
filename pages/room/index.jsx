@@ -6,6 +6,8 @@ import {Container} from '@mui/material';
 import {Grid} from '@mui/material';
 import {Typography} from '@mui/material';
 import SceneComposer from '../../src/components/scenes/SceneComposer';
+import AddScene from '../../src/components/addScene/AddScene';
+
 
 export default function Index(){
     const devices = [
@@ -57,6 +59,7 @@ export default function Index(){
                 <Cameras cameras={cameras} />
               </Grid>
             </Grid>
+            <AddScene/>
             <SceneComposer/>
         </Container>
     )
