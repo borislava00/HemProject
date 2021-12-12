@@ -5,7 +5,7 @@ import Devices from '../../src/components/devices/Devices';
 import {Container} from '@mui/material';
 import {Grid} from '@mui/material';
 import {Typography} from '@mui/material';
-import SceneComposer from '../../src/components/scene-composer/SceneComposer';
+import SceneComposer from '../../src/components/scenes/SceneComposer';
 
 export default function Index(){
     const devices = [

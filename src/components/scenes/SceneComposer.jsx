@@ -1,13 +1,14 @@
 import { Grid, Typography } from '@mui/material';
 import styles from './SceneComposer.module.scss';
-import Scenes from '../scenes/Scenes';
+import Scenes from './Scenes';
 import { useMemo, useState } from 'react';
-import data from '../../../public/data/devices.json';
+import dataDevices from '../../../public/data/devices.json';
+import dataRooms from '../../../public/data/rooms.json';
 
-export default function SceneComposer({ devices = [...data.devices], rooms = ['Bedroom', 'Living Room', 'Kitchen'], selected, onScene }) {
-  const [variant, setVariant] = useState('off');
+export default function SceneComposer({ devices = [...dataDevices.devices], rooms = [...dataRooms.rooms], selected, onScene }) {
+  const [status, setStatus] = useState('off');
 
-  const groupBy = useMemo(() => function(objectArray, property) {
+  const groupBy = useMemo(() => function (objectArray, property) {
     return objectArray.reduce((acc, obj) => {
       let key = obj[property];
       if (!acc[key]) {
@@ -24,11 +25,11 @@ export default function SceneComposer({ devices = [...data.devices], rooms = ['B
     <div className={styles.wrapper}>
       <Grid container direction="column" spacing={4} className={styles.container}>
         {rooms.map((room, index) => {
-          if (groupedDevices[index + 1]) {
+          if (groupedDevices[room.id]) {
             return (
               <Grid item key={index}>
-                <Typography variant="h4">{room}</Typography>
-                <Scenes cards={groupedDevices[index + 1]} />
+                <Typography variant="h4">{room.name}</Typography>
+                <Scenes cards={groupedDevices[room.id]} />
               </Grid>
             )
           }
