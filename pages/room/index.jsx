@@ -5,18 +5,17 @@ import Devices from '../../src/components/devices/Devices';
 import {Container} from '@mui/material';
 import {Grid} from '@mui/material';
 import {Typography} from '@mui/material';
-
-
+import SceneComposer from '../../src/components/scene-composer/SceneComposer';
 
 export default function Index(){
     const devices = [
-        {"title" : "Test",
+        {"title" : "ON",
         "iconUrl" : '../images/alarm-clock.svg'},
         {"title" : "OFFLINE",
         "iconUrl" : '../images/alarm-clock.svg'},
-        {"title" : "Test",
+        {"title" : "OFF",
         "iconUrl" : '../images/alarm-clock.svg'},
-        {"title" : "Test",
+        {"title" : "OFF",
         "iconUrl" : '../images/alarm-clock.svg'}
     ]
     
@@ -58,6 +57,7 @@ export default function Index(){
                 <Cameras cameras={cameras} />
               </Grid>
             </Grid>
+            <SceneComposer/>
         </Container>
     )
 }
