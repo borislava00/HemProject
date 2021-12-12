@@ -8,7 +8,6 @@ import TextField from '@mui/material/TextField'
 import Container from '@mui/material/Container'
 
 export default function AddScene({open, handleClose, devices = [...dataDevices.devices], rooms = [...dataRooms.rooms], onScene, onSubmit}){
-
     const content = 
     <div>
         <TextField
