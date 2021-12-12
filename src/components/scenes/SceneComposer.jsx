@@ -8,6 +8,20 @@ import dataRooms from '../../../public/data/rooms.json';
 export default function SceneComposer({ devices = [...dataDevices.devices], rooms = [...dataRooms.rooms], selected, onScene }) {
   const [status, setStatus] = useState('off');
 
+  let cards = [];
+  devices.map((dvc, index) => {
+    cards.push(
+      {
+        ...dvc,
+        state: 'on',
+      },
+      {
+        ...dvc,
+        state: 'off',
+      }
+    );
+  });
+
   const groupBy = useMemo(() => function (objectArray, property) {
     return objectArray.reduce((acc, obj) => {
       let key = obj[property];
@@ -16,10 +30,10 @@ export default function SceneComposer({ devices = [...dataDevices.devices], room
       }
       acc[key].push(obj);
       return acc;
-    }, {});
+    }, []);
   }, [devices])
 
-  let groupedDevices = groupBy(devices, 'roomId');
+  let groupedDevices = groupBy(cards, 'roomId');
 
   return (
     <div className={styles.wrapper}>
