@@ -8,6 +8,7 @@ import {Typography} from '@mui/material';
 import SceneComposer from '../../src/components/scenes/SceneComposer';
 import AddScene from '../../src/components/scenes/AddScene';
 import { useState } from 'react';
+import EditScene from '../../src/components/scenes/EditScene';
 
 
 export default function Index(){
@@ -62,8 +63,7 @@ export default function Index(){
                 <Cameras cameras={cameras} />
               </Grid>
             </Grid>
-            <AddScene open={openClose} onSubmit={() => {setOpenClose(false)}}/>
-            <SceneComposer/>
+            <EditScene open={openClose} onSubmit={() => {setOpenClose(false)}}/>
         </Container>
     )
 }
