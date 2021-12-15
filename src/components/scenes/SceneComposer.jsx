@@ -2,10 +2,8 @@ import { Grid, Typography } from '@mui/material';
 import styles from './SceneComposer.module.scss';
 import Scenes from './Scenes';
 import { useMemo, useState } from 'react';
-import dataDevices from '../../../public/data/devices.json';
-import dataRooms from '../../../public/data/rooms.json';
 
-export default function SceneComposer({ devices = [...dataDevices.devices], rooms = [...dataRooms.rooms], selected, onScene }) {
+export default function SceneComposer({ devices = [], rooms = [], selected, onScene }) {
   const [status, setStatus] = useState('off');
 
   let cards = [];
@@ -13,11 +11,15 @@ export default function SceneComposer({ devices = [...dataDevices.devices], room
     cards.push(
       {
         ...dvc,
+        title: dvc.name,
         state: 'on',
+        id: index,
       },
       {
         ...dvc,
+        title: dvc.name,
         state: 'off',
+        id: index,
       }
     );
   });
@@ -43,7 +45,7 @@ export default function SceneComposer({ devices = [...dataDevices.devices], room
             return (
               <Grid item key={index}>
                 <Typography variant="h4">{room.name}</Typography>
-                <Scenes cards={groupedDevices[room.id]} />
+                <Scenes cards={groupedDevices[room.id]} selected={selected} onScene={onScene} />
               </Grid>
             )
           }
