@@ -5,14 +5,15 @@ import Devices from '../../src/components/devices/Devices';
 import {Container} from '@mui/material';
 import {Grid} from '@mui/material';
 import {Typography} from '@mui/material';
-import SceneComposer from '../../src/components/scenes/SceneComposer';
-import AddScene from '../../src/components/scenes/AddScene';
 import { useState } from 'react';
 import EditScene from '../../src/components/scenes/EditScene';
+import dataDevices from '../../public/data/devices.json';
+import dataRooms from '../../public/data/rooms.json';
 
 
 export default function Index(){
     const [openClose, setOpenClose] = useState(true);
+    const [selected, setSelected] = useState(0);
 
     const devices = [
         {"title" : "ON",
@@ -63,7 +64,13 @@ export default function Index(){
                 <Cameras cameras={cameras} />
               </Grid>
             </Grid>
-            <EditScene open={openClose} onSubmit={() => {setOpenClose(false)}}/>
+            <EditScene 
+            open={openClose} 
+            onSubmit={() => {setOpenClose(false)}} 
+            selected={selected}
+            onScene={() => {setSelected(dataDevices.devices)}}
+            devices={dataDevices.devices}
+            rooms={dataRooms.rooms}/>
         </Container>
     )
 }
