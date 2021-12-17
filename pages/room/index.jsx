@@ -67,9 +67,10 @@ export default function Index(){
             open={openClose} 
             onSubmit={() => {setOpenClose(false)}} 
             selected={selected}
-            onScene={() => {setSelected(dataDevices.devices)}}
-            devices={dataDevices.devices}
+            onScene={(e) => {setSelected(dataDevices.devices[e.target.parentNode.parentNode.parentNode.parentNode.parentNode.querySelector('.Card_card__1aaYq').id])}}            devices={dataDevices.devices}
             rooms={dataRooms.rooms}/>
         </Container>
     )
 }
+
+//onScene={(e) => {setSelected(dataDevices.devices[e.target.parentNode.parentNode.parentNode.parentNode.parentNode.querySelector('.Card_card__1aaYq').id])}}

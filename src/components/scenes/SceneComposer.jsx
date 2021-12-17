@@ -45,7 +45,7 @@ export default function SceneComposer({ devices = [], rooms = [], selected, onSc
             return (
               <Grid item key={index}>
                 <Typography variant="h4">{room.name}</Typography>
-                <Scenes cards={groupedDevices[room.id]} selected={selected} onScene={onScene} />
+                <Scenes cards={groupedDevices[room.id]} selected={selected?.roomId == room.id && selected} onScene={onScene} />
               </Grid>
             )
           }
