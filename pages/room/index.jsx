@@ -51,7 +51,6 @@ export default function Index(){
         {videoUrl : "../videos/garden.mp4"},
         {videoUrl : "../videos/kitchen.mp4"},
     ]
-
     return(
         <Container maxWidth="xl">
             <Navigation/>
