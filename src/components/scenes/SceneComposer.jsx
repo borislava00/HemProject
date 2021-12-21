@@ -7,21 +7,23 @@ export default function SceneComposer({ devices = [], rooms = [], selected, onSc
   const [status, setStatus] = useState('off');
 
   let cards = [];
-  devices.map((dvc, index) => {
+  let id = 0;
+  devices.map(dvc => {
     cards.push(
       {
         ...dvc,
         title: dvc.name,
         state: 'on',
-        id: index,
+        id: id,
       },
       {
         ...dvc,
         title: dvc.name,
         state: 'off',
-        id: index,
+        id: id + 1,
       }
     );
+    id += 2;
   });
 
   const groupBy = useMemo(() => function (objectArray, property) {
