@@ -4,6 +4,7 @@ import { Grid } from '@mui/material'
 import { useState } from 'react'
 
 export default function Scenes({ cards = [], onScene, selected }) {
+  console.log(selected);
   return (
     <div className={styles['scenes-container']}>
       <Grid container spacing={2}>
