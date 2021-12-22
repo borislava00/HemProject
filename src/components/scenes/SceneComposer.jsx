@@ -8,20 +8,20 @@ export default function SceneComposer({ devices = [], rooms = [], selected, onSc
 
   const groupBy = useMemo(() => {
     let id = 1;
-
     const groupedDevices = rooms.map(room => {
       const sortedCards = devices.filter(device => device?.roomId === room?.id);
       const cards = [];
-
       sortedCards.forEach(device => {
         cards.push(
           {
             ...device,
+            "title": device.name,
             "id": id++,
             "status": "on"
           },
           {
             ...device,
+            "title": device.name,
             "id": id++,
             "status": "off"
           },
@@ -44,12 +44,12 @@ export default function SceneComposer({ devices = [], rooms = [], selected, onSc
     <div className={styles.wrapper}>
       <Grid container direction="column" spacing={4} className={styles.container}>
         {groupBy.map((item, index) => {
-            return (
-              <Grid item key={index}>
-                <Typography variant="h4">{item.name}</Typography>
-                <Scenes cards={item} selected={selected} onScene={onScene} />
-              </Grid>
-            )
+          return (
+            <Grid item key={index}>
+              <Typography variant="h4">{item.name}</Typography>
+              <Scenes cards={item} selected={selected} onScene={onScene} />
+            </Grid>
+          )
         })}
       </Grid>
     </div>
