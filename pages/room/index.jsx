@@ -10,7 +10,7 @@ import EditScene from '../../src/components/scenes/EditScene';
 import dataDevices from '../../public/data/devices.json';
 import dataRooms from '../../public/data/rooms.json';
 
-const selectedItem = dataDevices[0];
+const selectedItem = dataDevices.devices[0];
 
 export default function Index(){
     const [openClose, setOpenClose] = useState(true);
@@ -52,6 +52,7 @@ export default function Index(){
         {videoUrl : "../videos/garden.mp4"},
         {videoUrl : "../videos/kitchen.mp4"},
     ]
+
     return(
         <Container maxWidth="xl">
             <Navigation/>
@@ -68,7 +69,7 @@ export default function Index(){
             open={openClose} 
             onSubmit={() => {setOpenClose(false)}} 
             selected={selected}
-            onScene={(e) => {setSelected(dataDevices.devices[e.target.parentNode.parentNode.parentNode.parentNode.parentNode.querySelector('.Card_card__1aaYq').id])}}
+            onScene={() => {}}
             devices={dataDevices.devices}
             rooms={dataRooms.rooms}/>
         </Container>

@@ -3,7 +3,7 @@ import CardWrapper from '@mui/material/Card';
 import styles from './Card.module.scss';
 import { Chip } from '@mui/material';
 
-export default function Card({ iconUrl, outlined = false, onClick, title, variant, identifier }){
+export default function Card({ iconUrl, outlined = false, onClick, title, variant }){
     const getComponent = () => {
         let extention = iconUrl.split('.').pop();
         if ( extention == 'svg' || extention == 'png' ) {
@@ -17,7 +17,7 @@ export default function Card({ iconUrl, outlined = false, onClick, title, varian
     return(
         <div>
             <div>
-        <div className={styles.card} onClick={onClick} id={identifier}>
+        <div className={styles.card} onClick={onClick}>
             <CardWrapper variant={outlined ? "outlined" : null}>
                 <CardContent className={styles.content}>
                     {iconUrl ? 
