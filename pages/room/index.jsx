@@ -10,10 +10,11 @@ import EditScene from '../../src/components/scenes/EditScene';
 import dataDevices from '../../public/data/devices.json';
 import dataRooms from '../../public/data/rooms.json';
 
+const selectedItem = dataDevices[0];
 
 export default function Index(){
     const [openClose, setOpenClose] = useState(true);
-    const [selected, setSelected] = useState(0);
+    const [selected, setSelected] = useState(selectedItem);
 
     const devices = [
         {"title" : "ON",
