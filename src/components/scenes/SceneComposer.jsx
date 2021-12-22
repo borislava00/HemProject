@@ -6,52 +6,50 @@ import { useMemo, useState } from 'react';
 export default function SceneComposer({ devices = [], rooms = [], selected, onScene }) {
   const [status, setStatus] = useState('off');
 
-  let cards = [];
-  let id = 0;
-  devices.map(dvc => {
-    cards.push(
-      {
-        ...dvc,
-        title: dvc.name,
-        state: 'on',
-        id: id,
-      },
-      {
-        ...dvc,
-        title: dvc.name,
-        state: 'off',
-        id: id + 1,
-      }
-    );
-    id += 2;
-  });
-  console.log(cards);
+  const groupBy = useMemo(() => {
+    let id = 1;
 
-  const groupBy = useMemo(() => function (objectArray, property) {
-    return objectArray.reduce((acc, obj) => {
-      let key = obj[property];
-      if (!acc[key]) {
-        acc[key] = [];
-      }
-      acc[key].push(obj);
-      return acc;
-    }, []);
-  }, [devices])
+    const groupedDevices = rooms.map(room => {
+      const sortedCards = devices.filter(device => device?.roomId === room?.id);
+      const cards = [];
 
-  let groupedDevices = groupBy(cards, 'roomId');
+      sortedCards.forEach(device => {
+        cards.push(
+          {
+            ...device,
+            "id": id++,
+            "status": "on"
+          },
+          {
+            ...device,
+            "id": id++,
+            "status": "off"
+          },
+        )
+      })
+
+      console.log(cards);
+      return {
+        "id": room.id,
+        "name": room.name,
+        "cards": cards,
+      }
+    });
+
+    return groupedDevices
+  }, [devices, rooms]);
+
 
   return (
     <div className={styles.wrapper}>
       <Grid container direction="column" spacing={4} className={styles.container}>
-        {rooms.map((room, index) => {
-          if (groupedDevices[room.id]) {
+        {groupBy.map((item, index) => {
             return (
               <Grid item key={index}>
-                <Typography variant="h4">{room.name}</Typography>
-                <Scenes cards={groupedDevices[room.id]} selected={selected} onScene={onScene} />
+                <Typography variant="h4">{item.name}</Typography>
+                <Scenes cards={item} selected={selected} onScene={onScene} />
               </Grid>
             )
-          }
         })}
       </Grid>
     </div>
