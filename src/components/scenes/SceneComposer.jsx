@@ -44,12 +44,14 @@ export default function SceneComposer({ devices = [], rooms = [], selected, onSc
     <div className={styles.wrapper}>
       <Grid container direction="column" spacing={4} className={styles.container}>
         {groupBy.map((item, index) => {
+          if (groupBy[index].cards.length) {
             return (
               <Grid item key={index}>
                 <Typography variant="h4">{item.name}</Typography>
                 <Scenes cards={item} selected={selected} onScene={onScene} />
               </Grid>
             )
+          }
         })}
       </Grid>
     </div>
