@@ -6,8 +6,8 @@ import SceneComposer from '../scenes/SceneComposer';
 import Grid from '@mui/material/Grid'
 import Card from '../card/Card';
 
-export default function AddRoom({open, handleClose, rooms = [...dataRooms.rooms], onSubmit}){
-    console.log(rooms);
+export default function AddRoom({open, handleClose, rooms = [...dataRooms.rooms], onSubmit, selected}){
+    console.log(selected);
     const content = 
     <div>
         <Grid container spacing={2}>
@@ -15,7 +15,7 @@ export default function AddRoom({open, handleClose, rooms = [...dataRooms.rooms]
               rooms.map(room => {
                   return(
                       <Grid item>
-                          <Card iconUrl={"/images/bed.svg"} outlined={false} onClick={() =>{console.log("room")}} title={room.name}/>
+                          <Card iconUrl={"/images/bed.svg"} outlined={false} onClick={() =>{console.log("room")}} title={room.name} outlined={room.id == selected.id}/>
                       </Grid>
                   )
               })
@@ -24,6 +24,6 @@ export default function AddRoom({open, handleClose, rooms = [...dataRooms.rooms]
     </div>
 
     return(
-        <Modal open={open} title="ADD ROOM" buttonText={"ADD NEW ROOM"} handleSubmit={onSubmit} handleClose={handleClose} children={content} buttonProps={{"backgroundColor" : "#e150a6", "color" : "white"}}/>
+        <Modal open={open} title="ADD ROOM" buttonText={"ADD NEW ROOM"} handleSubmit={onSubmit} handleClose={handleClose} children={content} buttonProps={{"color" : "secondary"}}/>
     )
 }

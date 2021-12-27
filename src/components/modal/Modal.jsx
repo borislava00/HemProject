@@ -14,7 +14,7 @@ export default function Modal({ open , title , buttonText , handleSubmit , handl
                     {children}
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleSubmit} style={buttonProps} fullWidth>{buttonText}</Button>
+                    <Button onClick={handleSubmit} color={buttonProps.color} fullWidth>{buttonText}</Button>
                 </DialogActions>
             </Dialog>
         </div>
