@@ -2,6 +2,7 @@ import Navigation from '../../src/components/navigation/Navigation';
 import Header from '../../src/components/header/Header';
 import Cameras from '../../src/components/cameras/Cameras';
 import Devices from '../../src/components/devices/Devices';
+import ChangeRoom from '../../src/components/rooms/ChangeRoom';
 import {Container} from '@mui/material';
 import {Grid} from '@mui/material';
 import {Typography} from '@mui/material';
@@ -65,13 +66,16 @@ export default function Index(){
                 <Cameras cameras={cameras} />
               </Grid>
             </Grid>
-            <EditScene 
+            {/* <EditScene 
             open={openClose} 
             onSubmit={() => {setOpenClose(false)}} 
             selected={selected}
             onScene={() => {}}
             devices={dataDevices.devices}
-            rooms={dataRooms.rooms}/>
+            rooms={dataRooms.rooms}/> */}
+            <ChangeRoom
+            open={true}
+            />
         </Container>
     )
 }
