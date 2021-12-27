@@ -1,6 +1,9 @@
 import styles from './AddRoom.module.scss';
 import Modal from '../modal/Modal';
-import TextField from '@mui/material/TextField'
+import dataDevices from '../../../public/data/devices.json';
+import dataRooms from '../../../public/data/rooms.json';
+import TextField from '@mui/material/TextField';
+import SceneComposer from './SceneComposer';
 
 export default function AddRoom({open, handleClose, devices = [...dataDevices.devices], rooms = [...dataRooms.rooms], onScene, onSubmit}){
     const content = 
@@ -11,7 +14,7 @@ export default function AddRoom({open, handleClose, devices = [...dataDevices.de
           fullWidth
           margin="normal"
         />
-        <SceneComposer devices={devices} rooms={rooms} onScene={onScene}/>
+        <SceneComposer devices={devices}  rooms={rooms} onScene={onScene}/>
     </div>
 
     return(
