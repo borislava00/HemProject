@@ -75,6 +75,7 @@ export default function Index(){
             rooms={dataRooms.rooms}/> */}
             <ChangeRoom
             open={true}
+            selected={dataRooms.rooms[0]}
             />
         </Container>
     )
