@@ -1,15 +1,19 @@
-import { Container, Paper } from "@mui/material";
+import { Container, Paper, Typography } from "@mui/material";
 import Register from "../../src/components/register/Register";
 import styles from "./RegisterPage.module.scss";
+import Link from '../../src/components/link/Link';
 
 export default function index() {
   return (
     <div className={styles.wrapper}>
-      <Paper elevation={24}>
-        <Container maxWidth="xs" disableGutters>
+      <Container maxWidth="xs" className={styles.container}>
+        <Paper elevation={24} >
           <Register />
-        </Container>
-      </Paper>
+        </Paper>
+        <Typography className={styles.text}>
+          Already registered? <Link href="/login">Go to login</Link>
+        </Typography>
+      </Container>
     </div>
   )
 }
