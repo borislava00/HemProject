@@ -5,11 +5,11 @@ import Login from './Login.jsx'
 export default function LoginPage() {
   return (
     <div className={styles.wrapper}>
-      <Paper elevation={24}>
-        <Container maxWidth="xs" disableGutters>
+      <Container maxWidth="xs">
+        <Paper elevation={24}>
           <Login />
-        </Container>
-      </Paper>
+        </Paper>
+      </Container>
     </div>
   )
 }
