@@ -3,7 +3,20 @@ import { TextField, Button, InputAdornment, Grid } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
 import LockIcon from '@mui/icons-material/Lock';
 
-export default function Register() {
+export default function Register({ setEmail, setPassword, setRetype, onSubmit }) {
+
+  function handleEmailChange(e) {
+    setEmail(e.target.value);
+  }
+
+  function handlePasswordChange(e) {
+    setPassword(e.target.value);
+  }
+
+  function handleRetypeChange(e) {
+    setRetype(e.target.value);
+  }
+
   return (
     <div className={styles['register-form']}>
       <Grid container rowSpacing={1} justifyContent='center'>
@@ -22,6 +35,7 @@ export default function Register() {
             variant='outlined'
             placeholder='Email'
             type='email'
+            onChange={handleEmailChange}
           />
         </Grid>
         <Grid item xs={10}>
@@ -39,6 +53,7 @@ export default function Register() {
             variant='outlined'
             placeholder='Password'
             type='password'
+            onChange={handlePasswordChange}
           />
         </Grid>
         <Grid item xs={10}>
@@ -56,10 +71,15 @@ export default function Register() {
             variant='outlined'
             placeholder='Retype Password'
             type='password'
+            onChange={handleRetypeChange}
           />
         </Grid>
         <Grid item xs={10}>
-          <Button fullWidth variant="contained" className={styles.button}>
+          <Button
+            fullWidth
+            variant="contained"
+            className={styles.button}
+            onClick={onSubmit}>
             Register
           </Button>
         </Grid>
