@@ -3,7 +3,7 @@ import Register from "../../src/components/register/Register";
 import styles from "./RegisterPage.module.scss";
 import Link from '../../src/components/link/Link';
 
-export default function index() {
+export default function RegisterPage() {
   return (
     <div className={styles.wrapper}>
       <Container maxWidth="xs" className={styles.container}>
