@@ -11,7 +11,7 @@ export default function LoginPage() {
 
   async function loginUser() {
 
-    await fetch('https://hem-api.herokuapp.com/register', {
+    const response = await fetch('https://hem-api.herokuapp.com/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -19,24 +19,23 @@ export default function LoginPage() {
       body: JSON.stringify({
         'email': email,
         'password': password,
-      })
+      }),
     })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Success:', data);
+      if (response.ok) {
+        const data = await response.json();
         localStorage.setItem('accessToken', data['accessToken']);
         router.push('/');
-      })
-      .catch(error => {
-        console.log('Error:', error);
-      })
+      } else {
+        alert(`The email ${email} is not registered!`);
+        router.push('/register');
+      }
   }
 
   return (
     <div className={styles.wrapper}>
       <Container maxWidth='xs'>
         <Paper elevation={24}>
-          <Login 
+          <Login
             setEmail={setEmail}
             setPassword={setPassword}
             onSubmit={loginUser}
