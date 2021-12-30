@@ -10,7 +10,8 @@ export default function RegisterPage() {
   const [retype, setRetype] = useState('');
 
   async function registerUser() {
-    await fetch("https://hem-api.herokuapp.com/register", {
+
+   const response = await fetch("https://hem-api.herokuapp.com/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -20,13 +21,11 @@ export default function RegisterPage() {
         'password': `${password}`,
       }),
     })
-      .then(response => response.json())
-      .then(result => {
-        console.log('Success:', result);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+        alert('Registration successful!')
+      }
   }
 
   return (
