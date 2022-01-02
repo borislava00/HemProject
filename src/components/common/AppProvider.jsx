@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { Children, createContext } from "react";
 
 export const AppContext = createContext();
 
@@ -7,7 +7,7 @@ rooms = [],
 devices = [],
 thermostats = [],
 properties = [],
-scenes = []}) {
+scenes = [], children}) {
     return(
         <AppContext.Provider value={{
         refresh : () => {},
@@ -16,7 +16,7 @@ scenes = []}) {
         thermostats : [],
         properties : [],
         scenes : []}}>
-
+            {children}
         </AppContext.Provider>
     )
     
