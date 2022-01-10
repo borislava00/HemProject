@@ -12,8 +12,11 @@ import Energy from "../src/components/energy/Energy";
 import Modal from "../src/components/modal/Modal";
 
 import styles from "./Dashboard.module.scss";
+import { useContext, useEffect } from "react";
+import { AppContext } from "../src/components/common/AppProvider";
 
 export default function Dashboard() {
+  const [refresh] = useContext(AppContext);
   const data = [
     { temperature: 25, hour: 12 },
     { temperature: 13, hour: 13 },
@@ -45,6 +48,28 @@ export default function Dashboard() {
     { iconUrl: '../images/alarm-clock.svg', outlined: false, title: 'Bedroom' },
     { iconUrl: '../images/alarm-clock.svg', outlined: false, title: 'Bedroom' }
   ]
+
+
+  async function getData(){
+    const rooms = fetch('https://hem-api.herokuapp.com/rooms', {headers: {'Authorization' : `Bearer ${localStorage.getItem('accessToken')}`}})
+    .catch((error) => console.log(error))
+    const properties = fetch('https://hem-api.herokuapp.com/properties', {headers: {'Authorization' : `Bearer ${localStorage.getItem('accessToken')}`}})
+    .catch((error) => console.log(error))
+    const devices = fetch('https://hem-api.herokuapp.com/devices', {headers: {'Authorization' : `Bearer ${localStorage.getItem('accessToken')}`}})
+    .catch((error) => console.log(error))
+    const scenes = fetch('https://hem-api.herokuapp.com/scenes', {headers: {'Authorization' : `Bearer ${localStorage.getItem('accessToken')}`}})
+    .catch((error) => console.log(error))
+    const thermostats = fetch('https://hem-api.herokuapp.com/thermostats', {headers: {'Authorization' : `Bearer ${localStorage.getItem('accessToken')}`}})
+    .catch((error) => console.log(error))
+    Promise.all([rooms, properties, devices, scenes, thermostats])
+    .then(res => Promise.all(res.map(element => element.json())))
+    .then(data => data.forEach(element => {
+      console.log(element)
+    }))
+  }
+  useEffect(() => {
+    refresh()
+  }, [])
 
   return (
     <Container className={styles.container}>
