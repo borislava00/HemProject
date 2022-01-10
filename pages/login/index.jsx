@@ -26,10 +26,11 @@ export default function LoginPage() {
       if (response.ok) {
         const data = await response.json();
         localStorage.setItem('accessToken', data['accessToken']);
+        refresh()
         router.push('/');
+        refresh()
       } else {
         alert(`The email ${email} is not registered!`);
-        refresh()
         router.push('/register');
       }
   }
