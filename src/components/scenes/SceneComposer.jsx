@@ -28,7 +28,6 @@ export default function SceneComposer({ devices = [], rooms = [], selected, onSc
         )
       })
 
-      console.log(cards);
       return {
         "id": room.id,
         "name": room.name,

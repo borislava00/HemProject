@@ -9,12 +9,11 @@ import { useState } from 'react';
 import EditScene from '../../src/components/scenes/EditScene';
 import dataDevices from '../../public/data/devices.json';
 import dataRooms from '../../public/data/rooms.json';
+import EditScene from '../../src/components/scenes/EditScene'
 
-const selectedItem = dataDevices.devices[0];
-
-export default function Index(){
+export default function Index() {
     const [openClose, setOpenClose] = useState(true);
-    const [selected, setSelected] = useState(selectedItem);
+    const [selected, setSelected] = useState('');
 
     const devices = [
         {"title" : "ON",
@@ -65,13 +64,14 @@ export default function Index(){
                 <Cameras cameras={cameras} />
               </Grid>
             </Grid>
-            <EditScene 
-            open={openClose} 
-            onSubmit={() => {setOpenClose(false)}} 
-            selected={selected}
-            onScene={() => {}}
-            devices={dataDevices.devices}
-            rooms={dataRooms.rooms}/>
+            <EditScene
+                open={openClose}
+                onSubmit={() => { setOpenClose(false) }}
+                selected={selected}
+                onScene={setSelected}
+                devices={dataDevices.devices}
+                rooms={dataRooms.rooms} 
+            />
         </Container>
     )
 }

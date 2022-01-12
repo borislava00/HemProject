@@ -4,14 +4,37 @@ import { TextField } from '@mui/material';
 import SceneComposer from './SceneComposer';
 
 export default function EditScene({ devices, rooms, selected, onScene, onSubmit, open, handleClose }) {
-  const children = 
-  <div><TextField id="input" label="Scene Name" margin="normal" fullWidth/>
-    <SceneComposer devices={devices} rooms={rooms} selected={selected} onScene={onScene} />
-  </div>
-  
+  const children =
+    <div>
+      <TextField
+        id="input"
+        label="Scene Name"
+        margin="normal"
+        fullWidth
+      />
+      <SceneComposer
+        devices={devices}
+        rooms={rooms}
+        selected={selected}
+        onScene={onScene}
+      />
+    </div>
+
+  const buttonProps = {
+    color: 'primary',
+  }
+
   return (
     <div>
-      <Modal open={open} title="EDIT SCENE" buttonText="SAVE CHANGES" handleSubmit={onSubmit} handleClose={handleClose} children={children}></Modal>
+      <Modal
+        open={open}
+        title="EDIT SCENE"
+        buttonText="SAVE CHANGES"
+        handleSubmit={onSubmit}
+        handleClose={handleClose}
+        buttonProps={buttonProps}
+        children={children}
+      />
     </div>
   );
 }
