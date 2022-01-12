@@ -48,7 +48,12 @@ export default function Login({ setEmail, setPassword, onSubmit }) {
           />
         </Grid>
         <Grid item xs={10}>
-          <Button fullWidth variant="contained" className={styles.button} onClick={onSubmit}>
+          <Button
+            fullWidth
+            variant="contained"
+            className={styles.button}
+            onClick={onSubmit}
+          >
             Login
           </Button>
         </Grid>

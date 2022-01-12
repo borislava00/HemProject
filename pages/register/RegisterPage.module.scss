@@ -2,7 +2,7 @@
 
 .wrapper {
   height: 100vh;
-  background: linear-gradient(0deg, white 50%, #7441F3 50%);
+  background: linear-gradient(0deg, white 50%, #7441f3 50%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,6 +15,6 @@
 }
 
 .text {
-  font-size: .85rem;
+  font-weight: 400;
   padding-top: 2rem;
 }

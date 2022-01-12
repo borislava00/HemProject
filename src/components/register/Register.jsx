@@ -1,10 +1,9 @@
-import styles from './Register.module.scss';
-import { TextField, Button, InputAdornment, Grid } from '@mui/material';
-import EmailIcon from '@mui/icons-material/Email';
-import LockIcon from '@mui/icons-material/Lock';
+import { TextField, Button, InputAdornment, Grid } from "@mui/material";
+import styles from "./Register.module.scss";
+import EmailIcon from "@mui/icons-material/Email";
+import LockIcon from "@mui/icons-material/Lock";
 
 export default function Register({ setEmail, setPassword, setRetype, onSubmit }) {
-
   function handleEmailChange(e) {
     setEmail(e.target.value);
   }
@@ -18,23 +17,24 @@ export default function Register({ setEmail, setPassword, setRetype, onSubmit })
   }
 
   return (
-    <div className={styles['register-form']}>
-      <Grid container rowSpacing={1} justifyContent='center'>
+    <div className={styles["register-form"]}>
+      <Grid container rowSpacing={1} justifyContent="center">
         <Grid item xs={10}>
           <TextField
             className={styles.input}
             InputProps={{
               startAdornment: (
-                <InputAdornment position='start'>
-                  <EmailIcon className={styles.icon} />
+                <InputAdornment position="start">
+                  <EmailIcon className={styles.icon} sx={{ color: "black" }} />
                 </InputAdornment>
               ),
+              classes: { notchedOutline: styles["no-border"] },
             }}
             required
             fullWidth
-            variant='outlined'
-            placeholder='Email'
-            type='email'
+            variant="outlined"
+            placeholder="Email"
+            type="email"
             onChange={handleEmailChange}
           />
         </Grid>
@@ -43,16 +43,17 @@ export default function Register({ setEmail, setPassword, setRetype, onSubmit })
             className={styles.input}
             InputProps={{
               startAdornment: (
-                <InputAdornment position='start'>
-                  <LockIcon className={styles.icon} />
+                <InputAdornment position="start">
+                  <LockIcon className={styles.icon} sx={{ color: "black" }} />
                 </InputAdornment>
               ),
+              classes: { notchedOutline: styles["no-border"] },
             }}
             required
             fullWidth
-            variant='outlined'
-            placeholder='Password'
-            type='password'
+            variant="outlined"
+            placeholder="Password"
+            type="password"
             onChange={handlePasswordChange}
           />
         </Grid>
@@ -61,16 +62,17 @@ export default function Register({ setEmail, setPassword, setRetype, onSubmit })
             className={styles.input}
             InputProps={{
               startAdornment: (
-                <InputAdornment position='start'>
-                  <LockIcon className={styles.icon} />
+                <InputAdornment position="start">
+                  <LockIcon className={styles.icon} sx={{ color: "black" }} />
                 </InputAdornment>
               ),
+              classes: { notchedOutline: styles["no-border"] },
             }}
             required
             fullWidth
-            variant='outlined'
-            placeholder='Retype Password'
-            type='password'
+            variant="outlined"
+            placeholder="Retype Password"
+            type="password"
             onChange={handleRetypeChange}
           />
         </Grid>
@@ -79,11 +81,12 @@ export default function Register({ setEmail, setPassword, setRetype, onSubmit })
             fullWidth
             variant="contained"
             className={styles.button}
-            onClick={onSubmit}>
+            onClick={onSubmit}
+          >
             Register
           </Button>
         </Grid>
       </Grid>
     </div>
-  )
+  );
 }

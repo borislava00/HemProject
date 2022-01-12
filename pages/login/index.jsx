@@ -37,7 +37,7 @@ export default function LoginPage() {
 
   return (
     <div className={styles.wrapper}>
-      <Container maxWidth="xs">
+      <Container className={styles.container}>
         <Paper elevation={24}>
           <Login setEmail={setEmail} setPassword={setPassword} onSubmit={loginUser} />
         </Paper>
