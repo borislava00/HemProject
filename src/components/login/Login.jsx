@@ -2,22 +2,8 @@ import { Button, Grid, InputAdornment, TextField } from "@mui/material";
 import styles from "./Login.module.scss";
 import EmailIcon from "@mui/icons-material/Email";
 import LockIcon from "@mui/icons-material/Lock";
-import { makeStyles } from "@mui/styles";
-
-const useStyles = makeStyles({
-  noBorder: {
-    border: "none",
-    borderRadius: 0,
-  },
-  input: {
-    background: "#f8f8f8",
-    padding: 8,
-  },
-});
 
 export default function Login({ setEmail, setPassword, onSubmit }) {
-  const classes = useStyles();
-
   function handleEmailChange(e) {
     setEmail(e.target.value);
   }
@@ -31,7 +17,7 @@ export default function Login({ setEmail, setPassword, onSubmit }) {
       <Grid container rowSpacing={1} justifyContent="center">
         <Grid item xs={10}>
           <TextField
-            className={classes.input}
+            className={styles.input}
             fullWidth
             type="email"
             onChange={handleEmailChange}
@@ -41,13 +27,13 @@ export default function Login({ setEmail, setPassword, onSubmit }) {
                   <EmailIcon />
                 </InputAdornment>
               ),
-              classes: { notchedOutline: classes.noBorder },
+              classes: { notchedOutline: styles["no-border"] },
             }}
           />
         </Grid>
         <Grid item xs={10}>
           <TextField
-            className={classes.input}
+            className={styles.input}
             fullWidth
             type="password"
             onChange={handlePasswordChange}
@@ -57,7 +43,7 @@ export default function Login({ setEmail, setPassword, onSubmit }) {
                   <LockIcon />
                 </InputAdornment>
               ),
-              classes: { notchedOutline: classes.noBorder },
+              classes: { notchedOutline: styles["no-border"] },
             }}
           />
         </Grid>
