@@ -2,8 +2,14 @@
 
 .wrapper {
   height: 100vh;
-  background: linear-gradient(0deg, white 50%, #7441F3 50%);
+  background: linear-gradient(0deg, white 50%, #7441f3 50%);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.text {
+  padding: 2rem;
+  text-align: center;
+  font-weight: 400;
 }
