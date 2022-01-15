@@ -82,7 +82,7 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <Grid container>
+    <Grid container justifyContent="end">
       <Grid item className={styles["header-container"]}>
         <Header
           left={
@@ -100,12 +100,14 @@ export default function Dashboard() {
           }
         />
       </Grid>
-      <Grid item>
-        <Grid container spacing={2}>
+      <Grid item mt={10} mr={13.2} width={{ xs: "100%", md: "73%" }}>
+        <Grid container spacing={3} className={styles['main-container']}>
           <Grid xs={12} lg={6} item>
+            <Typography variant="h4" pb={1}>Thermostat</Typography>
             <Thermostat data={data} />
           </Grid>
           <Grid xs={12} lg={6} item>
+            <Typography variant="h4" pb={1}>Scenes</Typography>
             <Scenes cards={cards} />
           </Grid>
         </Grid>

@@ -38,14 +38,14 @@ export default function Thermostat({ data }) {
             style={{ color: "lightgrey" }}
             variant="determinate"
             value={100}
-            size={375}
+            size={350}
             thickness={2}
           />
           <CircularProgress
             style={{ color: "white", position: "absolute", transform: "rotate(180deg)" }}
             variant="determinate"
             value={progress}
-            size={375}
+            size={350}
             thickness={2}
           />
         </Stack>
@@ -82,7 +82,7 @@ export default function Thermostat({ data }) {
         >
           TEMPERATURE GRAPH
         </Typography>
-        <LineChart width={803} height={186} data={data}>
+        <LineChart width={690} height={186} data={data}>
           <Line
             type="monotone"
             dataKey="temperature"
