@@ -82,26 +82,34 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <Container className={styles.container}>
-      <Grid container className={styles["grid-container"]}>
-        <Grid item className={styles["header-container"]}>
-          <Header
-            left={
-              <User
-                avatar="../images/avatar.png"
-                name="John Doe"
-                headingSize="h2"
-                hasWelcome={true}
-              />
-            }
-            right={
-              <>
-                <Weather degrees={22} type="cloudy" /> <Time />
-              </>
-            }
-          />
+    <Grid container>
+      <Grid item className={styles["header-container"]}>
+        <Header
+          left={
+            <User
+              avatar="../images/avatar.png"
+              name="John Doe"
+              headingSize="h2"
+              hasWelcome={true}
+            />
+          }
+          right={
+            <>
+              <Weather degrees={22} type="cloudy" /> <Time />
+            </>
+          }
+        />
+      </Grid>
+      <Grid item>
+        <Grid container spacing={2}>
+          <Grid xs={12} lg={6} item>
+            <Thermostat data={data} />
+          </Grid>
+          <Grid xs={12} lg={6} item>
+            <Scenes cards={cards} />
+          </Grid>
         </Grid>
       </Grid>
-    </Container>
+    </Grid>
   );
 }
