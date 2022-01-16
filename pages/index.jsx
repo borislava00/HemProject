@@ -1,4 +1,4 @@
-import { Container, Grid, Typography } from "@mui/material";
+import { Container, Grid, MenuItem, Select, Typography } from "@mui/material";
 import Navigation from "../src/components/navigation/Navigation";
 import Header from "../src/components/header/Header";
 import Weather from "../src/components/weather/Weather";
@@ -11,7 +11,7 @@ import Rooms from "../src/components/rooms/Rooms";
 import Energy from "../src/components/energy/Energy";
 
 import styles from "./Dashboard.module.scss";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../src/components/common/AppProvider";
 
 export default function Dashboard() {
@@ -48,6 +48,12 @@ export default function Dashboard() {
     { iconUrl: "../images/alarm-clock.svg", outlined: false, title: "Bedroom" },
   ];
 
+  const [value, setValue] = useState('');
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+
   async function getData() {
     const rooms = fetch("https://hem-api.herokuapp.com/rooms", {
       headers: { Authorization: `Bearer ${localStorage.getItem("accessToken")}` },
@@ -82,33 +88,74 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <Grid container justifyContent="end">
-      <Grid item className={styles["header-container"]}>
-        <Header
-          left={
-            <User
-              avatar="../images/avatar.png"
-              name="John Doe"
-              headingSize="h2"
-              hasWelcome={true}
-            />
-          }
-          right={
-            <>
-              <Weather degrees={22} type="cloudy" /> <Time />
-            </>
-          }
-        />
+    <Grid container>
+      <Grid item>
+        <Navigation />
       </Grid>
-      <Grid item mt={10} mr={13.2} width={{ xs: "100%", md: "73%" }}>
-        <Grid container spacing={3} className={styles['main-container']}>
-          <Grid xs={12} lg={6} item>
-            <Typography variant="h4" pb={1}>Thermostat</Typography>
-            <Thermostat data={data} />
+      <Grid item>
+        <Grid container justifyContent="end">
+          <Grid item className={styles["header-container"]}>
+            <Header
+              left={
+                <User
+                  avatar="../images/avatar.png"
+                  name="John Doe"
+                  headingSize="h2"
+                  hasWelcome={true}
+                />
+              }
+              right={
+                <>
+                  <Weather degrees={22} type="cloudy" /> <Time />
+                </>
+              }
+            />
           </Grid>
-          <Grid xs={12} lg={6} item>
-            <Typography variant="h4" pb={1}>Scenes</Typography>
-            <Scenes cards={cards} />
+          <Grid item mt={10} mb={3} mr={13.2} width={{ xs: "100%", md: "73%" }}>
+            <Grid container spacing={3} className={styles['main-container']}>
+              <Grid xs={12} lg={6} mb={7} item>
+                <Typography variant="h4" pb={1}>Thermostat</Typography>
+                <Thermostat data={data} />
+              </Grid>
+              <Grid xs={12} lg={6} mb={7} item>
+                <Typography variant="h4" pb={1}>Scenes</Typography>
+                <Scenes cards={cards} />
+              </Grid>
+              <Grid xs={12} lg={6} item>
+                <Typography variant="h4" pb={1}>Cameras</Typography>
+                <Cameras cameras={cameras} />
+              </Grid>
+              <Grid xs={12} lg={6} item>
+                <Grid container justifyContent="space-between" alignItems="center">
+                  <Grid item xs={8}>
+                    <Typography variant="h4">
+                      Energy
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <Select
+                      sx={{
+                        padding: .5,
+                        borderRadius: 2,
+                        fontSize: 14,
+                        fontWeight: 500,
+                      }}
+                      size="small"
+                      label="Select"
+                      onChange={handleChange}
+                      value={value}
+                      className={styles["select-wrapper"]}
+                      fullWidth
+                    >
+                      <MenuItem label="This week" value={1}>This week</MenuItem>
+                      <MenuItem label="This year" value={2}>This year</MenuItem>
+                      <MenuItem label="This century" value={3}>This century</MenuItem>
+                    </Select>
+                  </Grid>
+                </Grid>
+                <Energy data={data} />
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>

@@ -12,20 +12,20 @@ export default function Navigation() {
     <div>
       <Drawer variant="permanent" anchor="left">
         <div className={styles['user-container']}>
-          <User avatar="/images/avatar.png" name="John Doe" size={55} headingSize="h6" />
-          <LongMenu/>
+          <User avatar="/images/avatar.png" name="John Doe" size={55} headingSize="h5" />
+          <LongMenu />
         </div>
         <List>
           <ListItem className={styles['list-item']}>
             <ListItemIcon>
-              <HomeOutlined/>
+              <HomeOutlined />
             </ListItemIcon>
             <ListItemText>Apartment</ListItemText>
             <Badge>5</Badge>
           </ListItem>
           <ListItem>
             <ListItemIcon>
-              <BedOutlined/>
+              <BedOutlined />
             </ListItemIcon>
             <ListItemText>Bedroom</ListItemText>
             <Badge>5</Badge>

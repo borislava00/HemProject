@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import AddCircleOutlinedIcon from "@mui/icons-material/AddCircleOutline";
 import RemoveCircleOutlinedIcon from "@mui/icons-material/RemoveCircleOutline";
-import { LineChart, Line } from "recharts";
+import { LineChart, Line, ResponsiveContainer } from "recharts";
 import { useState, useEffect } from "react";
 
 import styles from "./Thermostat.module.scss";
@@ -82,15 +82,17 @@ export default function Thermostat({ data }) {
         >
           TEMPERATURE GRAPH
         </Typography>
-        <LineChart width={690} height={186} data={data}>
-          <Line
-            type="monotone"
-            dataKey="temperature"
-            stroke="#ffffff"
-            strokeWidth={3}
-            dot={true}
-          />
-        </LineChart>
+        <ResponsiveContainer maxHeight={186}>
+          <LineChart width={690} height={186} data={data}>
+            <Line
+              type="monotone"
+              dataKey="temperature"
+              stroke="#ffffff"
+              strokeWidth={3}
+              dot={true}
+            />
+          </LineChart>
+        </ResponsiveContainer>
       </Paper>
     </div>
   );

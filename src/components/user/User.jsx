@@ -27,7 +27,6 @@ export default function User({
             )}
             <Typography
               variant={headingSize}
-              sx={{ fontSize: { lg: "3rem", xs: "1.5rem" } }}
             >
               {name}
             </Typography>

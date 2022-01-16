@@ -15,3 +15,10 @@
   width: 100% !important;
   height: 100% !important;
 }
+
+.select-wrapper{
+  background-color: rgb(colors.$primary_main, 10%);
+  color: colors.$primary_main !important;
+  border-radius: 2rem !important;
+  font-size: .875rem !important;
+}
